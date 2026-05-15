@@ -7,6 +7,7 @@ define('SS_MRP', 127 << 8);
 
 class hooks_fa_mrp extends hooks {
     var $module_name = 'fa_mrp';
+    var $version = '1.0.0';
 
     function install_options($app) {
         global $path_to_root;
