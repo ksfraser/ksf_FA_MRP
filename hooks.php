@@ -96,7 +96,7 @@ class hooks_ksf_FA_MRP extends hooks {
     /**
      * Install composer dependencies if needed
      */
-    private function ensure_composer_dependencies(): void {
+    private function ensure_composer_dependencies() {
         $module_dir = dirname(__FILE__);
         $autoload_path = $module_dir . '/vendor/autoload.php';
         

@@ -17,13 +17,13 @@ class ksf_FA_MRP extends Module
     public $module_shortname = "ksf_FA_MRP";
     public $module_title = "KSF Manufacturing Resource Planning (MRP) with Gantt";
     public $module_version = '0.1.0';
-    public $dependent_modules = [];
+    public $dependent_modules = array();
     
     public function __construct() 
     {
         global $db;
         
-        $this->dependent_modules = [];
+        $this->dependent_modules = array();
         
         $installed_modules = get_kd_ksf_modules();
         if (isset($installed_modules['ksf_FA_ProjectManagement'])) {
@@ -33,12 +33,12 @@ class ksf_FA_MRP extends Module
     
     function get_permissions() 
     {
-        return [
-            'MRP_VIEW' => ['shortname' => 'MRP_VIEW', 'title' => 'View MRP'],
-            'MRP_MANAGE' => ['shortname' => 'MRP_MANAGE', 'title' => 'Manage MRP'],
-            'MRP_VIEW_COSTS' => ['shortname' => 'MRP_VIEW_COSTS', 'title' => 'View Costs'],
-            'MRP_ADMIN' => ['shortname' => 'MRP_ADMIN', 'title' => 'MRP Admin'],
-        ];
+        return array(
+            'MRP_VIEW' => array('shortname' => 'MRP_VIEW', 'title' => 'View MRP'),
+            'MRP_MANAGE' => array('shortname' => 'MRP_MANAGE', 'title' => 'Manage MRP'),
+            'MRP_VIEW_COSTS' => array('shortname' => 'MRP_VIEW_COSTS', 'title' => 'View Costs'),
+            'MRP_ADMIN' => array('shortname' => 'MRP_ADMIN', 'title' => 'MRP Admin'),
+        );
     }
     
     function install() 
@@ -123,12 +123,12 @@ class ksf_FA_MRP extends Module
     function remove($force = false) 
     {
         $result = true;
-        $tables = [
+        $tables = array(
             '@TB_PREF@ksf_mrp_production_schedule',
             '@TB_PREF@ksf_mrp_workcenter_capacity',
             '@TB_PREF@ksf_mrp_material_requirements',
             '@TB_PREF@ksf_mrp_settings'
-        ];
+        );
         
         foreach ($tables as $table) {
             $sql = "DROP TABLE IF EXISTS $table";
@@ -156,13 +156,13 @@ class ksf_FA_MRP extends Module
 
 function mrp_default_settings() 
 {
-    $defaults = [
+    $defaults = array(
         'default_capacity_per_day' => '8',
         'lead_time_days' => '3',
         'auto_link_pm' => '1',
         'gantt_day_width' => '50',
         'gantt_row_height' => '45',
-    ];
+    );
     
     foreach ($defaults as $key => $value) {
         $sql = "INSERT IGNORE INTO `@TB_PREF@ksf_mrp_settings` 
