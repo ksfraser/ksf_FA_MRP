@@ -428,7 +428,7 @@ if (is_pm_active()) {
     link_schedule_to_project($schedule_id, $project_id, $task_id);
     
     // Auto-create task in PM
-    db_query("INSERT INTO fa_pm_tasks ...");
+    db_query("INSERT INTO ksf_projectmanagement_tasks ...");
 }
 ```
 

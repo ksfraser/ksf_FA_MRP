@@ -253,7 +253,7 @@ This document outlines the test strategy, test types, test cases, and acceptance
 | Preconditions | PM active, auto_link_pm enabled |
 | Steps | 1. Create work order in Mfg |
 | Expected Result | PM task created |
-| Pass Criteria | Task in fa_pm_tasks |
+| Pass Criteria | Task in ksf_projectmanagement_tasks |
 
 ---
 

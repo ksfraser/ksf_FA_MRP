@@ -92,7 +92,7 @@ function link_schedule_to_project($schedule_id, $project_id, $task_id = null)
     db_query($sql);
     
     if ($task_id) {
-        db_query("INSERT IGNORE INTO `" . TB_PREF . "fa_pm_tasks` (task_id, name, start_date, end_date, status) 
+        db_query("INSERT IGNORE INTO `" . TB_PREF . "ksf_projectmanagement_tasks` (task_id, name, start_date, end_date, status) 
                 SELECT " . db_escape($schedule_id) . ", CONCAT('MRP: ', item_code), start_date, end_date, 'Not Started' 
                 FROM `" . TB_PREF . "ksf_mrp_production_schedule` 
                 WHERE id = " . db_escape($schedule_id));

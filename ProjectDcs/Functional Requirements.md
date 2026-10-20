@@ -257,7 +257,7 @@ The module handles:
 **Requirements**:
 - FR-4.3.1: System shall check auto_link_pm setting
 - FR-4.3.2: System shall check if PM is active
-- FR-4.3.3: System shall create task in fa_pm_tasks
+- FR-4.3.3: System shall create task in ksf_projectmanagement_tasks
 - FR-4.3.4: System shall use item_code as task name
 - FR-4.3.5: System shall use workorder start/end dates
 - FR-4.3.6: System shall link to workorder_id
